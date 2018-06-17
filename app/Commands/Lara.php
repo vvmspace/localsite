@@ -41,7 +41,7 @@ class Lara extends Command
     {
         $type = 'laravel';
         $domain = $this->argument('domain');
-        exec('cd /var/www/ && laravel new ' . $domain . ' && cd ' . $domain . ' && chown www-data ./storage - R');
+        exec('cd /var/www/ && laravel new ' . $domain . ' && cd ' . $domain . ' && chown www-data ./storage -R');
         $conf =  App\Creator::GetConfig($domain, $type);
         file_put_contents('/etc/apache2/sites-available/' . $domain . '.conf', $conf);
         exec('a2ensite ' . $domain);
