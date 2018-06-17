@@ -20,7 +20,7 @@ class Create extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Usage: create {domain} {type=default}';
 
     /**
      * Create a new command instance.
