@@ -40,7 +40,7 @@ class LaraGit extends Command
     public function handle(): void
     {
         $type = 'laravel';
-        $source = $this->argument('source')
+        $source = $this->argument('source');
         $domain = $this->argument('domain');
         exec('cd /var/www/ && git clone ' . $source . ' ' . $domain . ' && cd ' . $domain . ' && cp .env.example .env && composer install && php artisan key:generate && chown www-data ./ -R');
         $conf =  Creator::GetConfig($domain, $type);
